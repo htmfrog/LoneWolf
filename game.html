@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Lone Wolf</title>
+    <link href="assets/logo.png" rel="icon" type="image/png">
+    <script src="script.js"></script>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script>
+      var camera = document.querySelector('#camera');
+      var cameralimit = "3500 24 0" || "-3500 24 0" || "0 24 3500" || "0 24 -3500";
+      if (camera.position >= cameralimit) {
+        camera.position = "0 24 0";
+      }
+    </script>
+  </head>
+  <body>
+    <a-scene loading-screen="dotsColor: lightblue; background: black">
+      <a-assets>
+        <a-asset-item id="terrainModel" src="assets/terrain.obj"></a-asset-item>
+        <img id="skyImg" src="assets/forest.jpg">
+      </a-assets>
+      <a-entity position="0 0 0" rotation="0 0 0" scale="3500 12 3500" obj-model="#terrainModel" color="lightbrown"></a-entity>
+      <a-sky src="#skyImg"></a-sky>
+      <a-sound src="assets/main_music.mp3" autoplay="true" loop="true" scale="3500 1 3500" position="0 13 0"></a-sound>
+      <a-camera id="camera" position="0 24 0" wasd-controls-enabled="true" look-controls-enabled="true"></a-camera>
+    </a-scene>
+  </body>
+</html>

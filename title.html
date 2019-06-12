@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Copperplate,Copperplate Gothic Light,fantasy;
+      }
+      .titlescreen {
+        bottom: 50%;
+      }
+      button {
+        background-color: DodgerBlue;
+        color: white;
+        border: none;
+        font-size: 17px;
+        padding: 14px;
+      }
+      button:hover {
+        background-color: RoyalBlue;
+      }
+    </style>
+    <title>Lone Wolf</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="game_src/assets/logo.png" rel="icon" type="image/png">
+  </head>
+  <body>
+    <div align="center">
+      <div class="titlescreen">
+        <h1>Lone Wolf</h1>
+        <button onclick="play()">Play</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      var music = new Audio();
+      music.src = "game_src/assets/theme_song.mp3";
+      while (true) {
+        music.play();
+      }
+      function play() {
+        window.location = "game_src/game.html";
+      }
+    </script>
+  </body>
+</html>
